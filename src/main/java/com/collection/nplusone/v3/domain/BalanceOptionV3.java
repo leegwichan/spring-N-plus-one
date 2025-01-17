@@ -30,6 +30,11 @@ public class BalanceOptionV3 {
     @JoinColumn(name = "balance_content_id", nullable = false)
     private BalanceContentV3 balanceContent;
 
+    public BalanceOptionV3(BalanceContentV3 content, String name) {
+        this.balanceContent = content;
+        this.name = name;
+    }
+
     public boolean isContain(BalanceContentV3 content) {
         return balanceContent.getId() == content.getId();
     }

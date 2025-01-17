@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BalanceContentRepositoryV2 extends JpaRepository<BalanceContentV2, Long> {
 
-    @EntityGraph("balanceContent")
+    @EntityGraph(attributePaths = "balanceOptions")
     List<BalanceContentV2> findAllByCategory(String category);
 }

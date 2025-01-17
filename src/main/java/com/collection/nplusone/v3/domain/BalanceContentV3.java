@@ -25,4 +25,9 @@ public class BalanceContentV3 {
 
     @Column(nullable = false)
     private String category;
+
+    public BalanceContentV3(String name, String category) {
+        this.name = name;
+        this.category = category;
+    }
 }

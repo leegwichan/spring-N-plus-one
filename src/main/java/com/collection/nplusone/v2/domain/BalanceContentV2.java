@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedAttributeNode;
+import jakarta.persistence.NamedEntityGraph;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.ArrayList;
@@ -31,6 +33,11 @@ public class BalanceContentV2 {
 
     @OneToMany(mappedBy = "balanceContent")
     private List<BalanceOptionV2> balanceOptions = new ArrayList<>();
+
+    public BalanceContentV2(String name, String category) {
+        this.name = name;
+        this.category = category;
+    }
 
     public BalanceOptionV2 getFirstOption() {
         return balanceOptions.get(0);
