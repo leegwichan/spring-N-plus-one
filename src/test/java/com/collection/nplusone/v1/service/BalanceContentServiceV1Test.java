@@ -42,9 +42,16 @@ class BalanceContentServiceV1Test {
     }
 
     @Test
-    void test() {
+    void 다건_조회() {
         log.info("-- 테스트 쿼리 시작 --");
         balanceContentService.getContents(CATEGORY);
+        log.info("-- 테스트 쿼리 종료 --");
+    }
+
+    @Test
+    void 단건_조회() {
+        log.info("-- 테스트 쿼리 시작 --");
+        balanceContentService.getContent(1L);
         log.info("-- 테스트 쿼리 종료 --");
     }
 }

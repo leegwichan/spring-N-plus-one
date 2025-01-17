@@ -17,14 +17,14 @@ public class BalanceGameV3 {
     }
 
     public static List<BalanceGameV3> createList(List<BalanceContentV3> balanceContents,
-                                                     List<BalanceOptionV3> balanceOptions) {
+                                                 List<BalanceOptionV3> balanceOptions) {
         return balanceContents.stream()
                 .map(content -> new BalanceGameV3(content, findOptions(content, balanceOptions)))
                 .toList();
     }
 
-    private static List<BalanceOptionV3> findOptions(BalanceContentV3 content, List<BalanceOptionV3> balanceOptions) {
-        return balanceOptions.stream()
+    private static List<BalanceOptionV3> findOptions(BalanceContentV3 content, List<BalanceOptionV3> options) {
+        return options.stream()
                 .filter(option -> option.isContain(content))
                 .toList();
     }

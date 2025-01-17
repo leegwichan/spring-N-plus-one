@@ -1,5 +1,6 @@
 package com.collection.nplusone.v1.service;
 
+import com.collection.nplusone.dto.BalanceContentResponse;
 import com.collection.nplusone.dto.BalanceContentsResponse;
 import com.collection.nplusone.v1.repository.BalanceContentRepositoryV1;
 import lombok.RequiredArgsConstructor;
@@ -16,5 +17,11 @@ public class BalanceContentServiceV1 {
     public BalanceContentsResponse getContents(String category) {
         var contents = balanceContentRepository.findAllByCategory(category);
         return BalanceContentsResponse.fromV1(contents);
+    }
+
+    @Transactional(readOnly = true)
+    public BalanceContentResponse getContent(long id) {
+        var contents = balanceContentRepository.findById(id).get();
+        return new BalanceContentResponse(contents);
     }
 }
