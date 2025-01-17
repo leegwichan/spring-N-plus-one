@@ -9,5 +9,4 @@ public class NplusoneApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(NplusoneApplication.class, args);
 	}
-
 }

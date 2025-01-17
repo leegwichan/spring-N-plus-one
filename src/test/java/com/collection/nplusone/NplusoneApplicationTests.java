@@ -9,5 +9,4 @@ class NplusoneApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
