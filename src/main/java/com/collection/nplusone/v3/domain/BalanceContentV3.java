@@ -22,4 +22,7 @@ public class BalanceContentV3 {
 
     @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
+    private String category;
 }

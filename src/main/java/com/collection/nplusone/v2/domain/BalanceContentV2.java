@@ -26,6 +26,17 @@ public class BalanceContentV2 {
     @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
+    private String category;
+
     @OneToMany(mappedBy = "balanceContent")
     private List<BalanceOptionV2> balanceOptions = new ArrayList<>();
+
+    public BalanceOptionV2 getFirstOption() {
+        return balanceOptions.get(0);
+    }
+
+    public BalanceOptionV2 getSecondOption() {
+        return balanceOptions.get(1);
+    }
 }

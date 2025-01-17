@@ -29,4 +29,8 @@ public class BalanceOptionV3 {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "balance_content_id", nullable = false)
     private BalanceContentV3 balanceContent;
+
+    public boolean isContain(BalanceContentV3 content) {
+        return balanceContent.getId() == content.getId();
+    }
 }
